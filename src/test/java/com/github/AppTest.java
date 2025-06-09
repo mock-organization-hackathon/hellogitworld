@@ -3,6 +3,8 @@ package com.github;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 //Pending comments
 
@@ -33,6 +35,29 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
+    /**
+     * Test that App prints "Hello World!" to console
+     */
+    public void testHelloWorldPrint()
+    {
+        // Capture System.out
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outContent));
+        
+        try {
+            // Call the main method
+            App.main(new String[]{});
+            
+            // Verify the output
+            String expectedOutput = "Hello World!" + System.lineSeparator();
+            assertEquals(expectedOutput, outContent.toString());
+        } finally {
+            // Restore original System.out
+            System.setOut(originalOut);
+        }
+    }
+    
     /**
      * Rigourous Test :-)
      */
