@@ -6,6 +6,13 @@ import static Sum.sum
 def name = "Matthew"
 int programmingPoints = 10
 
+println """
+    _   _      _ _         __  __       _   _   _                
+   | | | | ___| | | ___   |  \/  | __ _| |_| |_| |__   _____      __
+   | |_| |/ _ \ | |/ _ \  | |\/| |/ _` | __| __| '_ \ / _ \ \ /\ / /
+   |  _  |  __/ | | (_) | | |  | | (_| | |_| |_| | | |  __/\ V  V / 
+   |_| |_|\___|_|_|\___/  |_|  |_|\__,_|\__|\_____|_| |_|\___| \_/\_/  
+"""
 println "Hello ${name}"
 println "${name} has at least ${programmingPoints} programming points."
 println "${programmingPoints} squared is ${square(programmingPoints)}"
